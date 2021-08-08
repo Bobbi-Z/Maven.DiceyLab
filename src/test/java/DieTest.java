@@ -10,8 +10,10 @@ class DieTest {
     @Test
     void constructorTest() {
         Integer givenSides = 20;
-        die = new Die(givenSides);
+        String name = "d20";
+        die = new Die(name, givenSides);
         Assertions.assertEquals(givenSides, die.getNumberOfSides());
+        Assertions.assertEquals(name, die.getName());
     }
 
     @Test
