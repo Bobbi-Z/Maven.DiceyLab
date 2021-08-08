@@ -1,15 +1,15 @@
 import java.util.Objects;
 
-public class Die { //create instances of a die with n sides
+public class DieConstuctor { //create instances of a die with n sides
 
     private Integer numberOfSides;
     private String name;
 
-    public Die() {
+    public DieConstuctor() {
 
     }
 
-    public Die(String name, Integer numberOfSides) {
+    public DieConstuctor(String name, Integer numberOfSides) {
         this.numberOfSides = numberOfSides;
         this.name = name;
     }
@@ -20,9 +20,6 @@ public class Die { //create instances of a die with n sides
 
     public void setNumberOfSides(Integer numberOfSides) {
         this.numberOfSides = numberOfSides;
-    }
-
-    public void run() {
     }
 
 
@@ -37,7 +34,7 @@ public class Die { //create instances of a die with n sides
 
     @Override
     public String toString() {
-        return "Die{" +
+        return "DieConstuctor{" +
                 "numberOfSides=" + numberOfSides +
                 ", name='" + name + '\'' +
                 '}';

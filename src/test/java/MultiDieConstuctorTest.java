@@ -1,24 +1,22 @@
-import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
-class MultiDieTest {
+class MultiDieConstuctorTest {
 
     MultiDie multiDie = new MultiDie();
-    Die testDie = new Die();
+    DieConstuctor testDieConstuctor = new DieConstuctor();
 
 
     @Test
     void createTest() {
         Integer expectedNumOfSides = 6;
 
-        testDie = multiDie.create(expectedNumOfSides);
-        Integer actualNumOfSides = testDie.getNumberOfSides();
+        testDieConstuctor = multiDie.create(expectedNumOfSides);
+        Integer actualNumOfSides = testDieConstuctor.getNumberOfSides();
 
 
         Assertions.assertEquals(expectedNumOfSides, actualNumOfSides);
@@ -29,14 +27,14 @@ class MultiDieTest {
     void findAll() {
         Integer d20 = 20;
 
-        testDie = multiDie.create(d20);
+        testDieConstuctor = multiDie.create(d20);
 
-        List<Die> testList = new ArrayList<>();
-        testList.add(testDie);
-        int [] actual = testList.stream().mapToInt(Die::getNumberOfSides).toArray();
+        List<DieConstuctor> testList = new ArrayList<>();
+        testList.add(testDieConstuctor);
+        int [] actual = testList.stream().mapToInt(DieConstuctor::getNumberOfSides).toArray();
 
         int[] expected = multiDie.findAll();
-        //IntStream expected = expectedList.stream().mapToInt(Die::getNumberOfSides);
+        //IntStream expected = expectedList.stream().mapToInt(DieConstuctor::getNumberOfSides);
 
         System.out.println(actual[0]);
 
@@ -47,7 +45,7 @@ class MultiDieTest {
     void delete() {
         Integer d4 = 4;
 
-        testDie = multiDie.create(d4);
+        testDieConstuctor = multiDie.create(d4);
 
         Boolean actual = multiDie.delete();
 
