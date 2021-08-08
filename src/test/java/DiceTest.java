@@ -31,9 +31,10 @@ class DiceTest {
 
     @Test
     void setNumberOfSidesTest() {
-        Integer givenNumSides = 6;
-        dice.setNumberOfSides(givenNumSides);
+        Integer expectedNumSides = 6;
+        Die given = Die.D6;
+         dice.setNumberOfSides(given);
         Integer actualNumOfSides = dice.getNumberOfSides();
-        Assertions.assertEquals(givenNumSides, actualNumOfSides);
+        Assertions.assertEquals(expectedNumSides, actualNumOfSides);
     }
 }

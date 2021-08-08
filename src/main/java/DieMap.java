@@ -1,10 +1,7 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 
 import java.util.EnumMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-
 public class DieMap {
 
    public static EnumMap<Die, Integer> howManyToRoll = new EnumMap<>(Die.class);

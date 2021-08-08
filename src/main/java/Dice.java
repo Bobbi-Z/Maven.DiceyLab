@@ -9,7 +9,7 @@ public class Dice { //create instances of n die with the same n of sides
 
     public Dice(Integer numberOfDie, Integer numberOfSides){
         setNumberOfDie(numberOfDie);
-        setNumberOfSides(numberOfSides);
+        this.numberOfSides = numberOfSides;
     }
 
     public Integer getNumberOfDie(){
@@ -24,8 +24,8 @@ public class Dice { //create instances of n die with the same n of sides
         return numberOfSides;
     }
 
-    public void setNumberOfSides(Integer numberOfSides){
-        this.numberOfSides = numberOfSides;
+    public void setNumberOfSides(Die die){
+       numberOfSides = die.getNumberOfSidesForEnum();
     }
 
 }

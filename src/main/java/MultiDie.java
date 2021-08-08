@@ -6,7 +6,7 @@ public class MultiDie {
     // to simulate rolling many die
 
     public List<DieConstuctor> dieConstuctorToRoll = new ArrayList<>();
-    private static String name = "d";
+    private static final String name = "d";
 
     public DieConstuctor create(Integer numberOfSides){
        DieConstuctor newlyCreated = new DieConstuctor(name + numberOfSides.toString(), numberOfSides);

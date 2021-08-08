@@ -10,13 +10,13 @@ public enum Die {
     D20(20),
     D100(100);
 
-    private final Integer numberOfSides;
+    private final Integer numberOfSidesForEnum;
 
-    public Integer getNumberOfSides(){
-        return this.numberOfSides;
+    public Integer getNumberOfSidesForEnum(){
+        return this.numberOfSidesForEnum;
     }
 
-    Die(Integer numberOfSides){
-        this.numberOfSides =numberOfSides;
+    Die(Integer numberOfSidesForEnum){
+        this.numberOfSidesForEnum =numberOfSidesForEnum;
     }
 }
