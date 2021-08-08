@@ -11,27 +11,29 @@ class DiceTest {
     @Test
     void testDice(){ //given //when //then
         Integer givenNumOfDie = 2;
+        Integer givenNumOfSides = 6;
 
-        dice = new Dice(givenNumOfDie);
+        dice = new Dice(givenNumOfDie, givenNumOfSides);
 
        Assertions.assertEquals(givenNumOfDie, dice.getNumberOfDie());
+       Assertions.assertEquals(givenNumOfSides, dice.getNumberOfSides());
 
     }
 
     @Test
-    void setNumberOfDie() {
+    void setNumberOfDieTest() {
         Integer givenNumOfDie = 5;
         dice.setNumberOfDie(givenNumOfDie);
         Integer actualNumOfDie = dice.getNumberOfDie();
         Assertions.assertEquals(givenNumOfDie, actualNumOfDie);
     }
 
+
     @Test
-    void rollDice() { //I want to test that when the number of die value is passed into the method that is how many
-        // roll die function is called
-
-
-
-
+    void setNumberOfSidesTest() {
+        Integer givenNumSides = 6;
+        dice.setNumberOfSides(givenNumSides);
+        Integer actualNumOfSides = dice.getNumberOfSides();
+        Assertions.assertEquals(givenNumSides, actualNumOfSides);
     }
 }

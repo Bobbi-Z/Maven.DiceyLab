@@ -1,13 +1,15 @@
-public class Dice {
+public class Dice { //create instances of n die with the same n of sides
 
     private Integer numberOfDie;
+    private Integer numberOfSides;
 
     public Dice() {
 
     }
 
-    public Dice(Integer numberOfDie){
+    public Dice(Integer numberOfDie, Integer numberOfSides){
         setNumberOfDie(numberOfDie);
+        setNumberOfSides(numberOfSides);
     }
 
     public Integer getNumberOfDie(){
@@ -18,8 +20,12 @@ public class Dice {
         this.numberOfDie = numberOfDie;
     }
 
-    public Integer rollDice(Dice dice){
-        return null;
+    public Integer getNumberOfSides(){
+        return numberOfSides;
+    }
+
+    public void setNumberOfSides(Integer numberOfSides){
+        this.numberOfSides = numberOfSides;
     }
 
 }
