@@ -141,8 +141,8 @@ class RollsTest {
 
         Integer totalNumberOfDie = 0;
         Integer upperBound = 0;
-        Integer loopsThroughMap = 0;
-        while (loopsThroughMap < testMap.size()) {
+
+
         for (Map.Entry<Die, Integer> entry : testMap.entrySet()) {
             Die key = entry.getKey();
             Integer numberOfDie = entry.getValue();
@@ -152,8 +152,6 @@ class RollsTest {
             upperBound += bound;
             }
 
-            loopsThroughMap++;
-        }
         Integer actual = Rolls.rollMapDie(testMap);
 
         if (actual < totalNumberOfDie|| actual > upperBound){
