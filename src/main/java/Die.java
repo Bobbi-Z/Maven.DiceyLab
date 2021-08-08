@@ -16,7 +16,7 @@ public enum Die {
         return this.numberOfSides;
     }
 
-    private Die (Integer numberOfSides){
+    Die(Integer numberOfSides){
         this.numberOfSides =numberOfSides;
     }
 }
