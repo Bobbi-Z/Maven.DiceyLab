@@ -1,7 +1,9 @@
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -31,14 +33,14 @@ class MultiDieTest {
 
         List<Die> testList = new ArrayList<>();
         testList.add(testDie);
-        IntStream actual = testList.stream().mapToInt(Die::getNumberOfSides);
+        int [] actual = testList.stream().mapToInt(Die::getNumberOfSides).toArray();
 
-        IntStream expected = multiDie.findAll();
+        int[] expected = multiDie.findAll();
         //IntStream expected = expectedList.stream().mapToInt(Die::getNumberOfSides);
 
-        System.out.println(actual);
+        System.out.println(actual[0]);
 
-        Assertions.assertEquals(actual, expected);
+        Assertions.assertEquals(Arrays.toString(actual), Arrays.toString(expected));
     }
 
     @Test

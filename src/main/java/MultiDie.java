@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class MultiDie {
     //create a list of die (that may have different numbers of sides) to pass through the roll method
@@ -14,9 +13,9 @@ public class MultiDie {
         dieToRoll.add(newlyCreated);
         return newlyCreated;
     }
+    public int[] findAll() {
 
-    public IntStream findAll() {
-        return dieToRoll.stream().mapToInt(Die::getNumberOfSides);
+        return dieToRoll.stream().mapToInt(Die::getNumberOfSides).toArray();
     }
 
     public Boolean delete(){

@@ -6,6 +6,5 @@ public class Rolls { //the random number generator to simulate die rolls
     }
 
 
-    public void run() {
-    }
+
 }
