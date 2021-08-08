@@ -6,12 +6,7 @@ public class Simulation {
     }
 
     private void init() {
-        Rolls rolls = new Rolls();
-        rolls.run();
-        Die die = new Die();
-        die.run();
-        MultiDie multiDie = new MultiDie();
-        multiDie.run();
+
     }
 
 

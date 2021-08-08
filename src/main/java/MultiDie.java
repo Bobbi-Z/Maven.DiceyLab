@@ -28,6 +28,5 @@ public class MultiDie {
 }
 
 
-    public void run() {
-    }
+
 }
