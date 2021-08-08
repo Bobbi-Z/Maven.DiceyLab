@@ -1,7 +1,7 @@
 public class Dice { //create instances of n die with the same n of sides
 
-    private Integer numberOfDie;
-    private Integer numberOfSides;
+    private static Integer numberOfDie;
+    private static Integer numberOfSides;
 
     public Dice() {
 
@@ -12,7 +12,7 @@ public class Dice { //create instances of n die with the same n of sides
         this.numberOfSides = numberOfSides;
     }
 
-    public Integer getNumberOfDie(){
+    public static Integer getNumberOfDie(){
         return numberOfDie;
     }
 
@@ -20,7 +20,7 @@ public class Dice { //create instances of n die with the same n of sides
         this.numberOfDie = numberOfDie;
     }
 
-    public Integer getNumberOfSides(){
+    public static Integer getNumberOfSides(){
         return numberOfSides;
     }
 

@@ -121,4 +121,21 @@ class DieMapTest {
         }
        Assertions.assertTrue(DieMap.settingBackTo0());
     }
+
+    @Test
+    void entrySet() {
+        String expected = testMap.entrySet().toString();
+        String actual = DieMap.entrySet().toString();
+
+        Assertions.assertEquals(expected, actual);
+        System.out.println(expected);
+        System.out.println(actual);
+    }
+
+    @Test
+    void size() {
+        Integer expected = 7;
+        Integer actual = testMap.size();
+        Assertions.assertEquals(expected, actual);
+    }
 }

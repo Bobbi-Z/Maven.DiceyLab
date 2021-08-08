@@ -45,4 +45,12 @@ public class DieMap {
         }
         return true;
     }
+
+    public static Iterable<? extends Map.Entry<Die, Integer>> entrySet() {
+        return howManyToRoll.entrySet();
+    }
+
+    public static Integer size() {
+        return howManyToRoll.size();
+    }
 }
