@@ -16,8 +16,13 @@ public class Rolls {//the random number generator to simulate die rolls
     public static Integer rollDie(Dice dice){
        numberOfSides =  dice.getNumberOfSides();
       rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
+        RollDieContainer.collectDataFromRollDie(numberOfSides, rollDieResults);
         return rollDieResults;
     }
+
+
+
+
 
     public static Integer rollNTimes(Dice dice){
         Integer rollNTimesResults = 0;

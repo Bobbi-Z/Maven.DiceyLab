@@ -60,4 +60,15 @@ class DieTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void getEnumFromConstantTest() {
+        Integer givenNumOfSides = 6;
+        Die expectedDie = Die.D6;
+
+        Die actualDie = Die.getEnumFromConstant(givenNumOfSides);
+
+        Assertions.assertEquals(expectedDie, actualDie);
+        System.out.println(actualDie);
+
+    }
 }
