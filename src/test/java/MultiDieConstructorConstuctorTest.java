@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class MultiDieConstuctorTest {
+class MultiDieConstructorConstuctorTest {
 
-    MultiDie multiDie = new MultiDie();
+    MultiDieConstructor multiDieConstructor = new MultiDieConstructor();
     DieConstuctor testDieConstuctor = new DieConstuctor();
 
 
@@ -15,7 +15,7 @@ class MultiDieConstuctorTest {
     void createTest() {
         Integer expectedNumOfSides = 6;
 
-        testDieConstuctor = multiDie.create(expectedNumOfSides);
+        testDieConstuctor = multiDieConstructor.create(expectedNumOfSides);
         Integer actualNumOfSides = testDieConstuctor.getNumberOfSides();
 
 
@@ -27,13 +27,13 @@ class MultiDieConstuctorTest {
     void findAll() {
         Integer d20 = 20;
 
-        testDieConstuctor = multiDie.create(d20);
+        testDieConstuctor = multiDieConstructor.create(d20);
 
         List<DieConstuctor> testList = new ArrayList<>();
         testList.add(testDieConstuctor);
         int [] actual = testList.stream().mapToInt(DieConstuctor::getNumberOfSides).toArray();
 
-        int[] expected = multiDie.findAll();
+        int[] expected = multiDieConstructor.findAll();
         //IntStream expected = expectedList.stream().mapToInt(DieConstuctor::getNumberOfSides);
 
         System.out.println(actual[0]);
@@ -45,9 +45,9 @@ class MultiDieConstuctorTest {
     void delete() {
         Integer d4 = 4;
 
-        testDieConstuctor = multiDie.create(d4);
+        testDieConstuctor = multiDieConstructor.create(d4);
 
-        Boolean actual = multiDie.delete();
+        Boolean actual = multiDieConstructor.delete();
 
         Assertions.assertTrue(actual);
     }

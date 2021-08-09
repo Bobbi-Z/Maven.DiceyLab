@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bins { //Bin constructor
-
+//purpose of bin is to display the range of possible options with any roll of any die.
 
     private Integer min; //smallest number possible - usually the number of die
     private Integer max; //largest number possible - the number of die * the number of sides (if there are die

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultiDie {
+public class MultiDieConstructor {
     //create a list of die (that may have different numbers of sides) to pass through the roll method
     // to simulate rolling many die
 
