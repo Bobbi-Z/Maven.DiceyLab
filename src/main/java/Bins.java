@@ -1,4 +1,38 @@
+import java.util.ArrayList;
+import java.util.List;
 
-public class Bins {
+public class Bins { //Bin constructor
+
+
+    private Integer min; //smallest number possible - usually the number of die
+    private Integer max; //largest number possible - the number of die * the number of sides (if there are die
+    //  that have different numbers of sides this must be calculated per die.)
+
+    public Bins (){
+
+    }
+
+    public Bins (Integer min, Integer max){ // creating the instance of a bin
+        this.min = min;
+        this.max = max;
+    }
+
+    public Integer getMin() {
+        return min;
+    }
+
+    public void setMin(Dice dice) {
+        min = dice.getNumberOfDie();
+    }
+
+    public Integer getMax() {
+        return max;
+    }
+
+    public void setMax(Dice dice) {
+       max = (dice.getNumberOfDie() * dice.getNumberOfSides());
+    }
+
+
 
 }
