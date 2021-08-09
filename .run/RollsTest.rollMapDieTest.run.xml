@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RollsTest.rollMapDieTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true" repeat_count="100" repeat_mode="N Times">
+    <module name="Dicey-Lab" />
+    <option name="PACKAGE_NAME" value="" />
+    <option name="MAIN_CLASS_NAME" value="RollsTest" />
+    <option name="METHOD_NAME" value="rollMapDieTest" />
+    <option name="TEST_OBJECT" value="method" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

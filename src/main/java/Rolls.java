@@ -6,41 +6,48 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Rolls {//the random number generator to simulate die rolls
 
+    private static Integer numberOfSides;
+    private static Integer rollDieResults;
+    private static Integer numberOfDieToRoll;
+
+
 
 
     public static Integer rollDie(Dice dice){
-       Integer numberOfSides =  dice.getNumberOfSides();
-        return ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
+       numberOfSides =  dice.getNumberOfSides();
+      rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
+        return rollDieResults;
     }
 
     public static Integer rollNTimes(Dice dice){
-        Integer results = 0;
-        Integer numberOfDieToRoll = dice.getNumberOfDie();
+        Integer rollNTimesResults = 0;
+        numberOfDieToRoll = dice.getNumberOfDie();
         Integer rollCount = 0;
         while (rollCount < numberOfDieToRoll){
-            results = rollDie(dice);
-            results += results;
+            rollDieResults = rollDie(dice);
+            rollNTimesResults += rollDieResults;
             rollCount++;
         }
 
-        return results;
+        return rollNTimesResults;
     }
 
     public static Integer rollMapDie(EnumMap<Die, Integer> dieMap){
 
-        Integer results = 0;
-        Integer dieRollsCounts = 0;
+        Integer rollMapDieResults = 0;
+        Integer mapEntryCounts = 0;
+        while (mapEntryCounts < dieMap.size()) {
         for (Map.Entry<Die, Integer> entry : dieMap.entrySet()) {
             Die key = entry.getKey();
-            Integer numberOfDie = entry.getValue();
-            Dice dice = new Dice(numberOfDie, key.getNumberOfSidesForEnum());
-            while (dieRollsCounts < dieMap.size()) {
-                results = rollNTimes(dice);
-                results += results;
-                dieRollsCounts++;
+            numberOfDieToRoll = entry.getValue();
+            numberOfSides = key.getNumberOfSidesForEnum();
+            Dice dice = new Dice(numberOfDieToRoll, numberOfSides);
+            Integer rollNTimesResults = rollNTimes(dice);
+                rollMapDieResults += rollNTimesResults;
+                mapEntryCounts++;
             }
         }
-            return results;
+            return rollMapDieResults;
     }
 
 
