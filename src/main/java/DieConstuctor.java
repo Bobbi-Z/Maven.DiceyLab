@@ -1,4 +1,4 @@
-
+//this will probably get deleted and replaced with enums
 
 public class DieConstuctor { //create instances of a die with n sides
 

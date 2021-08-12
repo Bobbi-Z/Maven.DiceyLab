@@ -4,6 +4,7 @@ import java.util.List;
 
 public class RollDieContainer {
 //contains Bins and lists created for rollDie() - will capture every individual die roll
+
    static List<Integer> listD4 = new ArrayList<>();
    static List<Integer> listD6 = new ArrayList<>();
    static List<Integer> listD8 = new ArrayList<>();
@@ -16,6 +17,8 @@ public class RollDieContainer {
 
 
    public static void collectDataFromRollDie(Integer numberOfSides, Integer rollDieResult){
+      //switch case to determine which list receives the results based on which die was rolled and to create the bin that
+      // will help the data be mapped.
       switch (numberOfSides){
          case (4):
             createD4Bin(numberOfSides);

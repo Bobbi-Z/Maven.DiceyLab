@@ -1,6 +1,6 @@
 
 
-public enum Die {
+public enum Die { //enums for the most commonly used dice
 
     D4(4),
     D6(6),
@@ -10,7 +10,7 @@ public enum Die {
     D20(20),
     D100(100);
 
-    private final Integer numberOfSidesForEnum;
+    private final Integer numberOfSidesForEnum; //an integer return value for the number of sides
 
     public Integer getNumberOfSidesForEnum(){
         return this.numberOfSidesForEnum;
@@ -20,7 +20,8 @@ public enum Die {
         this.numberOfSidesForEnum =numberOfSidesForEnum;
     }
 
-    public static Die getEnumFromConstant(Integer numberOfSidesForEnum){
+    public static Die getEnumFromConstant(Integer numberOfSidesForEnum){// a switch case to return the enum for a die with a
+        // corresponding number of sides
 
         Die basedOnRequestedNumOfSides;
         switch(numberOfSidesForEnum){

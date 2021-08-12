@@ -13,7 +13,7 @@ public class Rolls {//the random number generator to simulate die rolls
 
 
 
-    public static Integer rollDie(Dice dice){
+    public static Integer rollDie(Dice dice){ // takes an argument of dice only to use the number of sides
        numberOfSides =  dice.getNumberOfSides();
       rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
         RollDieContainer.collectDataFromRollDie(numberOfSides, rollDieResults);
@@ -24,7 +24,8 @@ public class Rolls {//the random number generator to simulate die rolls
 
 
 
-    public static Integer rollNTimes(Dice dice){
+    public static Integer rollNTimes(Dice dice){ //takes an argument of dice to use the number of die to ensure the roll die function
+        // is called the correct amount of time while passing the number of sides the dice have to the rolldie function
         Integer rollNTimesResults = 0;
         numberOfDieToRoll = dice.getNumberOfDie();
         Integer rollCount = 0;
@@ -37,7 +38,9 @@ public class Rolls {//the random number generator to simulate die rolls
         return rollNTimesResults;
     }
 
-    public static Integer rollMapDie(EnumMap<Die, Integer> dieMap){
+    public static Integer rollMapDie(EnumMap<Die, Integer> dieMap){ //for large rolls or rolls with multiple kinds of
+        // die breaks the enum map up into key value pairs and feeds them individually as instances of dice to the rollNtimes
+        // method that send the sides the chosen die to the rolldie function.
 
         Integer rollMapDieResults = 0;
         Integer mapEntryCounts = 0;
