@@ -21,9 +21,10 @@ class RollsTest {
     @Test
     void rollD4Test(){
         int countNumberOfRolls = 0;
-       Dice dice = new Dice(1, 4);
+      //  Die die = Die.D4;
+       Dice dice = new Dice(1, Die.D4);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 4){
                 Assertions.fail();
@@ -35,9 +36,9 @@ class RollsTest {
     @Test
     void rollD6Test() {
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 6);
+        Dice dice = new Dice(1, Die.D6);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 6){
                 Assertions.fail();
@@ -50,9 +51,9 @@ class RollsTest {
     @Test
     void rollD8Test(){
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 8);
+        Dice dice = new Dice(1, Die.D8);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 8){
                 Assertions.fail();
@@ -64,9 +65,9 @@ class RollsTest {
     @Test
     void rollD10Test(){
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 10);
+        Dice dice = new Dice(1, Die.D10);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 10){
                 Assertions.fail();
@@ -78,9 +79,9 @@ class RollsTest {
     @Test
     void rollD12Test(){
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 4);
+        Dice dice = new Dice(1, Die.D12);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 12){
                 Assertions.fail();
@@ -92,9 +93,9 @@ class RollsTest {
     @Test
     void rollD20Test(){
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 20);
+        Dice dice = new Dice(1, Die.D20);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 20){
                 Assertions.fail();
@@ -106,9 +107,9 @@ class RollsTest {
     @Test
     void rollD100Test(){
         int countNumberOfRolls = 0;
-        Dice dice = new Dice(1, 100);
+        Dice dice = new Dice(1, Die.D100);
 
-        while (countNumberOfRolls < 1000000000){
+        while (countNumberOfRolls < 10){
             Integer result = Rolls.rollDie(dice);
             if (result < 1 || result > 100){
                 Assertions.fail();
@@ -119,7 +120,7 @@ class RollsTest {
 
     @Test
     void rollNTimesTest() { //this is testing that given this instance of dice the rollNTimes method returns a result within the bounds of possible results.
-        Dice dice = new Dice(5, 6);
+        Dice dice = new Dice(5, Die.D6);
         Integer resultsFromRollNTimes = Rolls.rollNTimes(dice);
         if (resultsFromRollNTimes < 5 || resultsFromRollNTimes > (5 * 6)){ //the resultsFromRollNTimes results cannot be less than the number of die because at the minimum each die can roll a 1
             //also the resultsFromRollNTimes results cannot exceed the number of die times the number of sides because the number of sides is also the max number that can be

@@ -6,16 +6,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Rolls {//the random number generator to simulate die rolls
 
-    private static Integer numberOfSides;
-    private static Integer rollDieResults;
-    private static Integer numberOfDieToRoll;
+//    private static Integer numberOfSides;
+//    private static Integer rollDieResults;
+//    private static Integer numberOfDieToRoll;
 
 
 
 
     public static Integer rollDie(Dice dice){ // takes an argument of dice only to use the number of sides
-       numberOfSides =  dice.getNumberOfSides();
-      rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
+       Integer numberOfSides =  dice.getNumberOfSides();
+      Integer rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
         RollDieContainer.collectDataFromRollDie(numberOfSides, rollDieResults);
         return rollDieResults;
     }
@@ -27,10 +27,10 @@ public class Rolls {//the random number generator to simulate die rolls
     public static Integer rollNTimes(Dice dice){ //takes an argument of dice to use the number of die to ensure the roll die function
         // is called the correct amount of time while passing the number of sides the dice have to the rolldie function
         Integer rollNTimesResults = 0;
-        numberOfDieToRoll = dice.getNumberOfDie();
+       Integer numberOfDieToRoll = dice.getNumberOfDie();
         Integer rollCount = 0;
         while (rollCount < numberOfDieToRoll){
-            rollDieResults = rollDie(dice);
+           Integer rollDieResults = rollDie(dice);
             rollNTimesResults += rollDieResults;
             rollCount++;
         }
@@ -47,9 +47,9 @@ public class Rolls {//the random number generator to simulate die rolls
         while (mapEntryCounts < dieMap.size()) {
         for (Map.Entry<Die, Integer> entry : dieMap.entrySet()) {
             Die key = entry.getKey();
-            numberOfDieToRoll = entry.getValue();
-            numberOfSides = key.getNumberOfSidesForEnum();
-            Dice dice = new Dice(numberOfDieToRoll, numberOfSides);
+           Integer numberOfDieToRoll = entry.getValue();
+            Integer numberOfSides = key.getNumberOfSidesForEnum();
+            Dice dice = new Dice(numberOfDieToRoll, Die.D6);
             Integer rollNTimesResults = rollNTimes(dice);
                 rollMapDieResults += rollNTimesResults;
                 mapEntryCounts++;

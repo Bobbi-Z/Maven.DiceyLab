@@ -123,7 +123,7 @@ class DieMapTest {
     }
 
     @Test
-    void entrySet() {
+    void entrySetTest() {
         String expected = testMap.entrySet().toString();
         String actual = DieMap.entrySet().toString();
 
@@ -133,9 +133,11 @@ class DieMapTest {
     }
 
     @Test
-    void size() {
+    void sizeTest() {
         Integer expected = 7;
         Integer actual = testMap.size();
         Assertions.assertEquals(expected, actual);
     }
+
+
 }

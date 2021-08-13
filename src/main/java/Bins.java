@@ -34,5 +34,10 @@ public class Bins { //Bin constructor
     }
 
 
-
+    public static String toString(Bins bins) {
+        return "Bins{" +
+                "min=" + bins.getMin() +
+                ", max=" + bins.getMax() +
+                '}';
+    }
 }

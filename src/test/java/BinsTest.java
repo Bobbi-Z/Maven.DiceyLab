@@ -10,7 +10,7 @@ class BinsTest {
     void constructorTest(){
         Integer expectedMin = 4;
         Integer expectedMax = 24;
-        Dice testDice = new Dice(4, 6);
+        Dice testDice = new Dice(4, Die.D6);
         testBins = new Bins(testDice.getNumberOfDie(), (testDice.getNumberOfSides() * testDice.getNumberOfDie()));
 
         Integer actualMin = testBins.getMin();
@@ -22,9 +22,9 @@ class BinsTest {
 
 
     @Test
-    void setMin() {
+    void setMinTest() {
         Integer expectedMin = 2;
-        Dice testDice = new Dice (2, 20);
+        Dice testDice = new Dice (2, Die.D20);
         testBins.setMin(testDice);
 
         Integer actualMin = testBins.getMin();
@@ -34,12 +34,22 @@ class BinsTest {
 
 
     @Test
-    void setMax() {
+    void setMaxTest() {
         Integer expectedMax = 40;
-        Dice testDice = new Dice(2, 20);
+        Dice testDice = new Dice(2, Die.D20);
         testBins.setMax(testDice);
         Integer actualMax = testBins.getMax();
 
         Assertions.assertEquals(expectedMax, actualMax);
+    }
+
+    @Test
+    void testToString() {
+        Bins bin = new Bins(1, 6);
+        String expected = "Bins{min=1, max=6}";
+        String actual = Bins.toString(bin);
+        Assertions.assertEquals(expected, actual);
+
+        System.out.println(Bins.toString(bin));
     }
 }

@@ -7,9 +7,9 @@ public class Dice { //create instances of n die with the same n of sides
 
     }
 
-    public Dice(Integer numberOfDie, Integer numberOfSides){
+    public Dice(Integer numberOfDie, Die die){
         setNumberOfDie(numberOfDie);
-        this.numberOfSides = numberOfSides;
+       setNumberOfSides(die);
     }
 
     public static Integer getNumberOfDie(){

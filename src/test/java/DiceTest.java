@@ -11,12 +11,12 @@ class DiceTest {
     @Test
     void testDice(){ //given //when //then
         Integer givenNumOfDie = 2;
-        Integer givenNumOfSides = 6;
+        Die die = Die.D6;
 
-        dice = new Dice(givenNumOfDie, givenNumOfSides);
+        dice = new Dice(givenNumOfDie, die);
 
        Assertions.assertEquals(givenNumOfDie, dice.getNumberOfDie());
-       Assertions.assertEquals(givenNumOfSides, dice.getNumberOfSides());
+       Assertions.assertEquals(die.getNumberOfSidesForEnum(), dice.getNumberOfSides());
 
     }
 

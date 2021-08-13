@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class MultiDieConstructorConstuctorTest {
+class MultiDieConstructorTest {
 
     MultiDieConstructor multiDieConstructor = new MultiDieConstructor();
     DieConstuctor testDieConstuctor = new DieConstuctor();

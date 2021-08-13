@@ -7,9 +7,9 @@ public class BinsMap { // tallying the results by creating a map where the keys 
     // the min and max of a bin and running a list through a method to increase the value of the key if that number is
     // rolled
 
-   static Map<Integer, Integer> resultsMap = new LinkedHashMap<>();
+   static LinkedHashMap<Integer, Integer> resultsMap = new LinkedHashMap<>();
 
-    public static Map<Integer, Integer> create(Bins bins){ //<result, numberOfTimesRolled>
+    public static LinkedHashMap<Integer, Integer> create(Bins bins){ //<result, numberOfTimesRolled>
         //use bins to create keys //use list to update values
         Integer min = bins.getMin(); //given the bin use the min to start making the keys
         Integer max = bins.getMax();//using the bin max to be the last key
@@ -22,11 +22,11 @@ public class BinsMap { // tallying the results by creating a map where the keys 
             return resultsMap; //returning the resulting map
     }
 
-    public String showAll(){ //will show the whole map represented as a string
+    public static String showAll(){ //will show the whole map represented as a string
         return resultsMap.toString();
     }
 
-    public String findSpecific(Integer numberRolled){ //give the key or number rolled this will return the number of times it was rolled
+    public static String findSpecific(Integer numberRolled){ //give the key or number rolled this will return the number of times it was rolled
         return resultsMap.get(numberRolled).toString();
     }
 //will find the number of times that number has been rolled
@@ -48,24 +48,32 @@ public class BinsMap { // tallying the results by creating a map where the keys 
     }
 
     public static Boolean updateSingleEntry(Integer numberRolled){ //taking a single roll result and updating the map
-        if (resultsMap.containsKey(numberRolled)) {
-            Integer oldValue = resultsMap.get(numberRolled);
-            Integer newValue = oldValue + 1;
-            resultsMap.replace(numberRolled, oldValue, newValue);
-            return resultsMap.get(numberRolled).equals(newValue);
+        if (resultsMap.containsKey(numberRolled)) { //checking if thr Map contains the number rolled as a key i.e. a key
+            // for a D6 would have numbers 1 through 6 as keys - if true cont. if false, return false
+            Integer oldValue = resultsMap.get(numberRolled); //using the numberRolled as the key return the value
+            Integer newValue = oldValue + 1; //add 1 to the value
+            resultsMap.replace(numberRolled, oldValue, newValue); //replace old value with new value
+            return resultsMap.get(numberRolled).equals(newValue); //confirm that the new value is in place/
         }
         return false;
     }
 
-    public static Boolean clearMap(BinsMap binsMap){ //completely empties a bins map
+    public static Boolean clearMap(){ //completely empties a bins map
         resultsMap.clear();
         return resultsMap.isEmpty();
     }
 
-    public static Boolean settingValuesToZero(){ // instead of clearing the map set all the values back to 0
+    public static Boolean settingValuesToZero(){ // instead of clearing the map set all the values back to 0 leaving the keys
         resultsMap.replaceAll((k, v) -> v = 0);
+        Integer sum = 0;
+        for (Integer v : resultsMap.values()) {
+            sum += v;
+            if (sum == 0) {
+                return true;
+            }
 
-        return null;
+        }
+        return false;
     }
 
 
