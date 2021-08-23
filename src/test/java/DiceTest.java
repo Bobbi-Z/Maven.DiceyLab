@@ -37,4 +37,8 @@ class DiceTest {
         Integer actualNumOfSides = dice.getNumberOfSides();
         Assertions.assertEquals(expectedNumSides, actualNumOfSides);
     }
+
+    @Test
+    void findDieInDice() {
+    }
 }

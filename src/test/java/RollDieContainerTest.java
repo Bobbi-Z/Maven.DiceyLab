@@ -15,24 +15,16 @@ class RollDieContainerTest {
 
     @Test
     void collectDataFromRollDieTestD6() {
+        Dice diceTest = new Dice(1, Die.D6);
         RollDieContainer rDc = mock(RollDieContainer.class);
-        rDc.collectDataFromRollDie(1, 5);
-        verify(rDc, times(1)).collectDataFromRollDie(1, 5);
+        rDc.collectDataFromRollDie(diceTest, 5);
+        verify(rDc, times(1)).collectDataFromRollDie(diceTest, 5);
 
     }
 
-    @Test
-    void createD4BinTest() {
-        Integer givenNumberOfSides = 4;
-        Bins expected = new Bins(1, 4);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
 
     @Test
-    void resultsFromD4() {
+    void resultsFromD4Test() {
         Integer rollD4 = 4;
         List<Integer> testList = new ArrayList<>();
         testList.add(4);
@@ -46,18 +38,9 @@ class RollDieContainerTest {
 
     }
 
-    @Test
-    void createD6Bin() {
-        Integer givenNumberOfSides = 6;
-        Bins expected = new Bins(1, 6);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
 
     @Test
-    void resultsFromD6() {
+    void resultsFromD6Test() {
         Integer rollD6 = 6;
         List<Integer> testList = new ArrayList<>();
         testList.add(6);
@@ -69,18 +52,10 @@ class RollDieContainerTest {
         test.clear();
     }
 
-    @Test
-    void createD8Bin() {
-        Integer givenNumberOfSides = 8;
-        Bins expected = new Bins(1, 8);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
+
 
     @Test
-    void resultsFromD8() {
+    void resultsFromD8Test() {
         Integer rollD8 = 8;
         List<Integer> testList = new ArrayList<>();
         testList.add(8);
@@ -92,19 +67,10 @@ class RollDieContainerTest {
         test.clear();
     }
 
-    @Test
-    void createD10Bin() {
-        Integer givenNumberOfSides = 10;
-        Bins expected = new Bins(1, 10);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
 
-    }
 
     @Test
-    void resultsFromD10() {
+    void resultsFromD10Test() {
         Integer rollD10 = 10;
         List<Integer> testList = new ArrayList<>();
         testList.add(10);
@@ -116,18 +82,9 @@ class RollDieContainerTest {
         test.clear();
     }
 
-    @Test
-    void createD12Bin() {
-        Integer givenNumberOfSides = 12;
-        Bins expected = new Bins(1, 12);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
 
     @Test
-    void resultsFromD12() {
+    void resultsFromD12Test() {
         Integer rollD12 = 12;
         List<Integer> testList = new ArrayList<>();
         testList.add(12);
@@ -139,18 +96,10 @@ class RollDieContainerTest {
         test.clear();
     }
 
-    @Test
-    void createD20Bin() {
-        Integer givenNumberOfSides = 20;
-        Bins expected = new Bins(1, 20);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
+
 
     @Test
-    void resultsFromD20() {
+    void resultsFromD20Test() {
         Integer rollD20 = 20;
         List<Integer> testList = new ArrayList<>();
         testList.add(20);
@@ -163,17 +112,7 @@ class RollDieContainerTest {
     }
 
     @Test
-    void createD100Bin() {
-        Integer givenNumberOfSides = 100;
-        Bins expected = new Bins(1, 100);
-        String expectedS = Bins.toString(expected);
-        Bins actual = RollDieContainer.createD4Bin(givenNumberOfSides);
-        String actualS = Bins.toString(actual);
-        Assertions.assertEquals(expectedS, actualS);
-    }
-
-    @Test
-    void resultsFromD100() {
+    void resultsFromD100Test() {
         Integer rollD100 = 100;
         List<Integer> testList = new ArrayList<>();
         testList.add(100);
@@ -183,5 +122,75 @@ class RollDieContainerTest {
         Assertions.assertEquals(expected, actual);
         testList.clear();
         test.clear();
+    }
+
+    @Test
+    void createD4BinTest() {
+        Dice D4 = new Dice(1, Die.D4);
+        Bins actual = RollDieContainer.createD4Bin(D4);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=4}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD6BinTest() {
+        Dice D6 = new Dice(1, Die.D6);
+        Bins actual = RollDieContainer.createD6Bin(D6);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=6}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD8BinTest() {
+        Dice D8 = new Dice(1, Die.D8);
+        Bins actual = RollDieContainer.createD8Bin(D8);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=8}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD10BinTest() {
+        Dice D10 = new Dice(1, Die.D10);
+        Bins actual = RollDieContainer.createD10Bin(D10);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=10}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD12BinTest() {
+        Dice D12 = new Dice(1, Die.D12);
+        Bins actual = RollDieContainer.createD12Bin(D12);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=12}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD20BinTest() {
+        Dice D20 = new Dice(1, Die.D20);
+        Bins actual = RollDieContainer.createD20Bin(D20);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=20}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
+    }
+
+    @Test
+    void createD100BinTest() {
+        Dice D100 = new Dice(1, Die.D100);
+        Bins actual = RollDieContainer.createD100Bin(D100);
+        String actualS = Bins.toString(actual);
+        String expected = "Bins{min=1, max=100}";
+        System.out.println(Bins.toString(actual));
+        Assertions.assertEquals(expected, actualS);
     }
 }

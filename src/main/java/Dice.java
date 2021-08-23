@@ -28,4 +28,10 @@ public class Dice { //create instances of n die with the same n of sides
        numberOfSides = die.getNumberOfSidesForEnum();
     }
 
+    public Die findDieInDice(Dice dice){
+       Integer sides = dice.getNumberOfSides();
+       Die die = Die.getEnumFromConstant(sides);
+       return die;
+    }
+
 }

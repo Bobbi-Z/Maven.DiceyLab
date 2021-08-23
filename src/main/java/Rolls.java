@@ -6,17 +6,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Rolls {//the random number generator to simulate die rolls
 
-//    private static Integer numberOfSides;
-//    private static Integer rollDieResults;
-//    private static Integer numberOfDieToRoll;
-
-
-
-
     public static Integer rollDie(Dice dice){ // takes an argument of dice only to use the number of sides
        Integer numberOfSides =  dice.getNumberOfSides();
       Integer rollDieResults = ThreadLocalRandom.current().nextInt(1, numberOfSides+1);
-        RollDieContainer.collectDataFromRollDie(numberOfSides, rollDieResults);
+        RollDieContainer.collectDataFromRollDie(dice, rollDieResults);
         return rollDieResults;
     }
 

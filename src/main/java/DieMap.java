@@ -2,7 +2,7 @@
 
 import java.util.EnumMap;
 import java.util.Map;
-public class DieMap {
+public class DieMap { //this will be used to track user input when rolling specific die
 
    public static EnumMap<Die, Integer> howManyToRoll = new EnumMap<>(Die.class); //enum map to track how many of a specific die to roll
     public static EnumMap<Die, Integer> creatingTheMap(){
